@@ -1,0 +1,32 @@
+{{ define "main" }}
+<section class="page-shell">
+  <header class="page-header">
+    <p class="eyebrow">Our West Valley AZ</p>
+    <h1>{{ .Title }}</h1>
+
+    {{ with .Description }}
+      <p class="page-description">{{ . }}</p>
+    {{ end }}
+  </header>
+
+  {{ with .Content }}
+    <div class="prose">
+      {{ . }}
+    </div>
+  {{ end }}
+
+  {{ if .Pages }}
+    <div class="card-grid">
+      {{ range .Pages.ByTitle }}
+        <article class="card">
+          <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+
+          {{ with .Description }}
+            <p>{{ . }}</p>
+          {{ end }}
+        </article>
+      {{ end }}
+    </div>
+  {{ end }}
+</section>
+{{ end }}

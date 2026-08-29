@@ -1,0 +1,1070 @@
+{{ define "main" }}
+
+<section class="resource-page-hero">
+  <div class="resource-page-hero__inner">
+    <p class="eyebrow">Avondale resident resource</p>
+
+    <a
+      class="resource-page__back"
+      href="/communities/avondale/"
+      data-link-note="Return to the Avondale community information hub.">
+      ← Avondale community hub
+    </a>
+
+    <h1>Trash &amp; Recycling</h1>
+
+    <p>
+      Collection information, bulk trash schedules, service zones,
+      and disposal guidance for Avondale residents.
+    </p>
+  </div>
+</section>
+
+<section class="resource-page">
+  <div class="resource-page__inner">
+
+    <nav class="resource-subnav" aria-label="Trash and recycling topics">
+      <a
+        href="#bulk-trash"
+        data-link-note="Jump to bulk trash information on this page.">Bulk Trash</a>
+      <a
+        href="#zone-map"
+        data-link-note="Jump to the Avondale solid waste zone map.">Zone Map</a>
+      <a
+        href="#collection-basics"
+        data-link-note="Jump to bulk trash collection guidelines.">Collection Basics</a>
+    </nav>
+
+    <section id="weekly-service" class="resident-collection">
+
+      <section class="resident-schedule">
+
+        <div class="resident-schedule__heading">
+          <p class="resource-card__type">Collection Schedule</p>
+          <h2>Trash &amp; recycling by zone</h2>
+
+          <p>
+            Find your zone on the map, then use the matching schedule for
+            weekly trash, recycling, and monthly bulk-trash service.
+          </p>
+        </div>
+
+
+        <div class="resident-schedule-layout">
+
+          <div class="resident-schedule-layout__map">
+
+            <figure class="city-zone-map" id="zone-map">
+
+              <div class="zone-map-interactive">
+
+                <img
+                  src="/images/avondale/solid-waste-zone-map.png"
+                  alt="City of Avondale solid waste zone map showing Zones A, B, C, and D"
+                  loading="lazy"
+                >
+
+                <svg
+                  class="zone-map-hotspots"
+                  viewBox="0 0 787 1038"
+                  preserveAspectRatio="none"
+                  role="group"
+                  aria-label="Select your Avondale solid waste zone">
+
+                  <a href="#zone-a" data-zone-target="zone-a" aria-label="View Zone A collection schedule">
+                    <rect x="75" y="95" width="640" height="140"></rect>
+                  </a>
+
+                  <a href="#zone-b" data-zone-target="zone-b" aria-label="View Zone B collection schedule">
+                    <rect x="200" y="230" width="515" height="190"></rect>
+                  </a>
+
+                  <a href="#zone-c" data-zone-target="zone-c" aria-label="View Zone C collection schedule">
+                    <rect x="105" y="420" width="610" height="205"></rect>
+                  </a>
+
+                  <a href="#zone-d" data-zone-target="zone-d" aria-label="View Zone D collection schedule">
+                    <rect x="75" y="620" width="640" height="390"></rect>
+                  </a>
+
+                </svg>
+
+              </div>
+
+              <figcaption>
+                <span class="zone-map-caption-desktop">
+                  Official City of Avondale solid-waste zone map.
+                  Click your zone on the map to view its schedule.
+                </span>
+                <span class="zone-map-caption-mobile">
+                  <strong>Tap your zone on the map to view its schedule.</strong>
+                </span>
+              </figcaption>
+
+            </figure>
+
+            <a
+              class="resident-zone-lookup"
+              href="https://gisportal.avondaleaz.gov/portal/apps/instant/lookup/index.html?appid=dac150ffa98f49a3b38d6445b4462a95"
+              data-link-note="Opens Avondale's official address-based solid waste zone lookup in a new tab."
+              target="_blank"
+              rel="noopener noreferrer">
+              Find your official zone →
+            </a>
+
+          </div>
+
+
+          <div class="resident-zone-grid">
+
+<section id="zone-a" class="resident-zone-card resident-zone-card--a" tabindex="-1">
+            <h3>
+              <span class="resident-zone-dot" aria-hidden="true"></span>
+              Zone A
+            </h3>
+
+            <div class="resident-zone-services">
+              <div>
+                <span class="resident-zone-label">Trash</span>
+                <strong>Monday</strong>
+                <small>Lunes</small>
+              </div>
+
+              <div>
+                <span class="resident-zone-label">Recycling</span>
+                <strong>Wednesday</strong>
+                <small>Miércoles</small>
+              </div>
+            </div>
+
+            <div class="resident-zone-bulk">
+              <span class="resident-zone-label">Bulk trash</span>
+              <strong>Week of the 1st Monday</strong>
+            </div>
+
+            <div class="resident-zone-remaining">
+              <h4>Remaining 2026 pickups</h4>
+              <ul>
+                <li><strong>Sep</strong><span>7–10</span></li>
+                <li><strong>Oct</strong><span>5–8</span></li>
+                <li><strong>Nov</strong><span>2–5</span></li>
+                <li><strong>Dec</strong><span>7–10</span></li>
+              </ul>
+            </div>
+          </section>
+
+
+          <section id="zone-b" class="resident-zone-card resident-zone-card--b" tabindex="-1">
+            <h3>
+              <span class="resident-zone-dot" aria-hidden="true"></span>
+              Zone B
+            </h3>
+
+            <div class="resident-zone-services">
+              <div>
+                <span class="resident-zone-label">Trash</span>
+                <strong>Tuesday</strong>
+                <small>Martes</small>
+              </div>
+
+              <div>
+                <span class="resident-zone-label">Recycling</span>
+                <strong>Thursday</strong>
+                <small>Jueves</small>
+              </div>
+            </div>
+
+            <div class="resident-zone-bulk">
+              <span class="resident-zone-label">Bulk trash</span>
+              <strong>Week of the 2nd Monday</strong>
+            </div>
+
+            <div class="resident-zone-remaining">
+              <h4>Remaining 2026 pickups</h4>
+              <ul>
+                <li><strong>Sep</strong><span>14–17</span></li>
+                <li><strong>Oct</strong><span>12–15</span></li>
+                <li><strong>Nov</strong><span>9–12</span></li>
+                <li><strong>Dec</strong><span>14–17</span></li>
+              </ul>
+            </div>
+          </section>
+
+
+          <section id="zone-c" class="resident-zone-card resident-zone-card--c" tabindex="-1">
+            <h3>
+              <span class="resident-zone-dot" aria-hidden="true"></span>
+              Zone C
+            </h3>
+
+            <div class="resident-zone-services">
+              <div>
+                <span class="resident-zone-label">Trash</span>
+                <strong>Wednesday</strong>
+                <small>Miércoles</small>
+              </div>
+
+              <div>
+                <span class="resident-zone-label">Recycling</span>
+                <strong>Monday</strong>
+                <small>Lunes</small>
+              </div>
+            </div>
+
+            <div class="resident-zone-bulk">
+              <span class="resident-zone-label">Bulk trash</span>
+              <strong>Week of the 3rd Monday</strong>
+            </div>
+
+            <div class="resident-zone-remaining">
+              <h4>Remaining 2026 pickups</h4>
+              <ul>
+                <li><strong>Sep</strong><span>21–24</span></li>
+                <li><strong>Oct</strong><span>19–22</span></li>
+                <li><strong>Nov</strong><span>16–19</span></li>
+                <li><strong>Dec</strong><span>21–24</span></li>
+              </ul>
+            </div>
+          </section>
+
+
+          <section id="zone-d" class="resident-zone-card resident-zone-card--d" tabindex="-1">
+            <h3>
+              <span class="resident-zone-dot" aria-hidden="true"></span>
+              Zone D
+            </h3>
+
+            <div class="resident-zone-services">
+              <div>
+                <span class="resident-zone-label">Trash</span>
+                <strong>Thursday</strong>
+                <small>Jueves</small>
+              </div>
+
+              <div>
+                <span class="resident-zone-label">Recycling</span>
+                <strong>Tuesday</strong>
+                <small>Martes</small>
+              </div>
+            </div>
+
+            <div class="resident-zone-bulk">
+              <span class="resident-zone-label">Bulk trash</span>
+              <strong>Week of the 4th Monday</strong>
+            </div>
+
+            <div class="resident-zone-remaining">
+              <h4>Remaining 2026 pickups</h4>
+              <ul>
+                <li class="resident-zone-date--current">
+                  <strong>Aug</strong><span>24–27</span>
+                </li>
+                <li><strong>Sep</strong><span>28–Oct. 1</span></li>
+                <li><strong>Oct</strong><span>26–29</span></li>
+                <li><strong>Nov</strong><span>23–27</span></li>
+                <li><strong>Dec</strong><span>28–31</span></li>
+              </ul>
+            </div>
+          </section>
+
+          </div>
+
+        </div>
+
+
+        <p class="resident-schedule__setout">
+          <strong>Bulk trash:</strong>
+          Place items at the curb by <strong>5:00 a.m. Monday</strong>
+          of your scheduled service week.
+        </p>
+
+
+        <details class="full-schedule-toggle">
+          <summary>View full 2026 bulk trash schedule</summary>
+
+          <div class="full-schedule-toggle__content">
+<div class="mobile-zone-schedule" data-zone-schedule>
+            <div class="mobile-zone-tabs" role="tablist" aria-label="Bulk trash zones">
+              <button
+                type="button"
+                class="mobile-zone-tab is-active"
+                role="tab"
+                aria-selected="true"
+                aria-controls="mobile-zone-a"
+                id="mobile-zone-tab-a"
+                data-zone="a">
+                Zone A
+              </button>
+
+              <button
+                type="button"
+                class="mobile-zone-tab"
+                role="tab"
+                aria-selected="false"
+                aria-controls="mobile-zone-b"
+                id="mobile-zone-tab-b"
+                data-zone="b">
+                Zone B
+              </button>
+
+              <button
+                type="button"
+                class="mobile-zone-tab"
+                role="tab"
+                aria-selected="false"
+                aria-controls="mobile-zone-c"
+                id="mobile-zone-tab-c"
+                data-zone="c">
+                Zone C
+              </button>
+
+              <button
+                type="button"
+                class="mobile-zone-tab"
+                role="tab"
+                aria-selected="false"
+                aria-controls="mobile-zone-d"
+                id="mobile-zone-tab-d"
+                data-zone="d">
+                Zone D
+              </button>
+            </div>
+
+
+            <section
+              class="mobile-zone-panel is-active"
+              id="mobile-zone-a"
+              role="tabpanel"
+              aria-labelledby="mobile-zone-tab-a"
+              data-zone-panel="a">
+
+              <div class="mobile-zone-panel__heading">
+                <strong>Zone A</strong>
+                <span>Week of the 1st Monday</span>
+              </div>
+
+              <div class="mobile-zone-dates">
+                <span><strong>Jan</strong> 5–8</span>
+                <span><strong>Feb</strong> 2–5</span>
+                <span><strong>Mar</strong> 2–5</span>
+                <span><strong>Apr</strong> 6–9</span>
+                <span><strong>May</strong> 4–7</span>
+                <span><strong>Jun</strong> 1–4</span>
+                <span><strong>Jul</strong> 6–9</span>
+                <span><strong>Aug</strong> 3–6</span>
+                <span><strong>Sep</strong> 7–10</span>
+                <span><strong>Oct</strong> 5–8</span>
+                <span><strong>Nov</strong> 2–5</span>
+                <span><strong>Dec</strong> 7–10</span>
+              </div>
+            </section>
+
+
+            <section
+              class="mobile-zone-panel"
+              id="mobile-zone-b"
+              role="tabpanel"
+              aria-labelledby="mobile-zone-tab-b"
+              data-zone-panel="b"
+              hidden>
+
+              <div class="mobile-zone-panel__heading">
+                <strong>Zone B</strong>
+                <span>Week of the 2nd Monday</span>
+              </div>
+
+              <div class="mobile-zone-dates">
+                <span><strong>Jan</strong> 12–15</span>
+                <span><strong>Feb</strong> 9–12</span>
+                <span><strong>Mar</strong> 9–12</span>
+                <span><strong>Apr</strong> 13–16</span>
+                <span><strong>May</strong> 11–14</span>
+                <span><strong>Jun</strong> 8–11</span>
+                <span><strong>Jul</strong> 13–16</span>
+                <span><strong>Aug</strong> 10–13</span>
+                <span><strong>Sep</strong> 14–17</span>
+                <span><strong>Oct</strong> 12–15</span>
+                <span><strong>Nov</strong> 9–12</span>
+                <span><strong>Dec</strong> 14–17</span>
+              </div>
+            </section>
+
+
+            <section
+              class="mobile-zone-panel"
+              id="mobile-zone-c"
+              role="tabpanel"
+              aria-labelledby="mobile-zone-tab-c"
+              data-zone-panel="c"
+              hidden>
+
+              <div class="mobile-zone-panel__heading">
+                <strong>Zone C</strong>
+                <span>Week of the 3rd Monday</span>
+              </div>
+
+              <div class="mobile-zone-dates">
+                <span><strong>Jan</strong> 19–22</span>
+                <span><strong>Feb</strong> 16–19</span>
+                <span><strong>Mar</strong> 16–19</span>
+                <span><strong>Apr</strong> 20–23</span>
+                <span><strong>May</strong> 18–21</span>
+                <span><strong>Jun</strong> 15–18</span>
+                <span><strong>Jul</strong> 20–23</span>
+                <span><strong>Aug</strong> 17–20</span>
+                <span><strong>Sep</strong> 21–24</span>
+                <span><strong>Oct</strong> 19–22</span>
+                <span><strong>Nov</strong> 16–19</span>
+                <span><strong>Dec</strong> 21–24</span>
+              </div>
+            </section>
+
+
+            <section
+              class="mobile-zone-panel"
+              id="mobile-zone-d"
+              role="tabpanel"
+              aria-labelledby="mobile-zone-tab-d"
+              data-zone-panel="d"
+              hidden>
+
+              <div class="mobile-zone-panel__heading">
+                <strong>Zone D</strong>
+                <span>Week of the 4th Monday</span>
+              </div>
+
+              <div class="mobile-zone-dates">
+                <span><strong>Jan</strong> 26–29</span>
+                <span><strong>Feb</strong> 23–26</span>
+                <span><strong>Mar</strong> 23–26</span>
+                <span><strong>Apr</strong> 27–30</span>
+                <span><strong>May</strong> 25–28</span>
+                <span><strong>Jun</strong> 22–25</span>
+                <span><strong>Jul</strong> 27–30</span>
+                <span><strong>Aug</strong> 24–27</span>
+                <span><strong>Sep</strong> 28–Oct. 1</span>
+                <span><strong>Oct</strong> 26–29</span>
+                <span><strong>Nov</strong> 23–27</span>
+                <span><strong>Dec</strong> 28–31</span>
+              </div>
+            </section>
+          </div>
+
+
+          <div class="schedule-table-wrap">
+            <table class="bulk-schedule-table">
+              <thead>
+                <tr>
+                  <th scope="col">Month</th>
+                  <th scope="col">Zone A</th>
+                  <th scope="col">Zone B</th>
+                  <th scope="col">Zone C</th>
+                  <th scope="col">Zone D</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <th scope="row">January</th>
+                  <td>5–8</td>
+                  <td>12–15</td>
+                  <td>19–22</td>
+                  <td>26–29</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">February</th>
+                  <td>2–5</td>
+                  <td>9–12</td>
+                  <td>16–19</td>
+                  <td>23–26</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">March</th>
+                  <td>2–5</td>
+                  <td>9–12</td>
+                  <td>16–19</td>
+                  <td>23–26</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">April</th>
+                  <td>6–9</td>
+                  <td>13–16</td>
+                  <td>20–23</td>
+                  <td>27–30</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">May</th>
+                  <td>4–7</td>
+                  <td>11–14</td>
+                  <td>18–21</td>
+                  <td>25–28</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">June</th>
+                  <td>1–4</td>
+                  <td>8–11</td>
+                  <td>15–18</td>
+                  <td>22–25</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">July</th>
+                  <td>6–9</td>
+                  <td>13–16</td>
+                  <td>20–23</td>
+                  <td>27–30</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">August</th>
+                  <td>3–6</td>
+                  <td>10–13</td>
+                  <td>17–20</td>
+                  <td>24–27</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">September</th>
+                  <td>7–10</td>
+                  <td>14–17</td>
+                  <td>21–24</td>
+                  <td>Sep. 28 – Oct. 1</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">October</th>
+                  <td>5–8</td>
+                  <td>12–15</td>
+                  <td>19–22</td>
+                  <td>26–29</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">November</th>
+                  <td>2–5</td>
+                  <td>9–12</td>
+                  <td>16–19</td>
+                  <td>23–27</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">December</th>
+                  <td>7–10</td>
+                  <td>14–17</td>
+                  <td>21–24</td>
+                  <td>28–31</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          </div>
+        </details>
+
+      </section>
+
+    </section>
+
+
+    <section id="container-service" class="container-service">
+
+      <p class="resource-card__type">Container Service</p>
+      <h2>Broken trash or recycling container?</h2>
+
+      <div class="container-service__panel">
+
+        <p>
+          If your trash or recycling container is damaged, the City can
+          inspect and repair or replace it.
+        </p>
+
+        <div class="container-service__columns">
+
+          <div>
+            <h3>Request service</h3>
+
+            <ul class="resource-list">
+              <li>
+                Report problems with <strong>wheels, lids, or container damage</strong>.
+              </li>
+              <li>
+                Applies to <strong>black trash</strong> and
+                <strong>blue recycling</strong> containers.
+              </li>
+            </ul>
+
+            <div class="container-service__actions">
+              <a href="tel:6233334400">
+                Call Public Works
+                <span aria-hidden="true">→</span>
+              </a>
+
+              <a href="https://avondaleaz.qscend.com/311/"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                Report an Issue
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+
+            <p class="container-service__phone">
+              Public Works: <strong>623-333-4400</strong>
+            </p>
+          </div>
+
+
+          <div>
+            <h3>What to expect</h3>
+
+            <ul class="resource-list">
+              <li>
+                Your container will be serviced on your
+                <strong>regular collection day</strong>.
+              </li>
+              <li>
+                Place the container out by
+                <strong>5:00 a.m. on your collection day</strong>.
+              </li>
+              <li>
+                Leave the container out through the end of the service
+                day so it can be inspected.
+              </li>
+              <li>
+                Containers are <strong>repaired when possible or replaced
+                when needed</strong>.
+              </li>
+            </ul>
+
+            <p class="resource-note">
+              <strong>Note:</strong> Damage from normal use is typically
+              repaired or replaced. Additional fees may apply for damage
+              caused by misuse.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section id="bulk-trash" class="bulk-resource">
+
+      <p class="resource-card__type">Collection Basics</p>
+      <h2>Bulk trash collection guidelines</h2>
+
+<section class="bulk-guidelines" id="collection-basics">
+          <h3>Preparing bulk items for pickup</h3>
+
+          <ul class="resource-list">
+            <li>
+              Place items <strong>at the curb by 5:00 a.m. Monday</strong>
+              of your scheduled collection week.
+            </li>
+
+            <li>
+              Bulk piles may be no larger than
+              <strong>3 cubic yards</strong> (about the same volume as 3 ft × 3 ft × 9 ft).
+            </li>
+
+            <li>
+              Do not block sidewalks, driveways, streets, or the
+              public right-of-way.
+            </li>
+
+            <li>
+              Keep bulk trash separate from regular trash and
+              recycling containers.
+            </li>
+
+            <li>
+              Remove hazardous materials before placing the pile
+              out for collection.
+            </li>
+          </ul>
+        </section>
+
+
+
+
+
+      <div class="bulk-material-columns">
+
+        <section>
+          <p class="resource-card__type">Accepted</p>
+          <h3>What can go in bulk trash?</h3>
+
+          <h4>Household items</h4>
+
+          <ul class="resource-list">
+            <li>Furniture</li>
+            <li>Mattresses</li>
+            <li>
+              Non-hazardous household appliances such as stoves,
+              washers, dryers, and water heaters
+            </li>
+          </ul>
+
+          <p class="resource-note">
+            Refrigerators, freezers, air conditioners, and other
+            appliances containing refrigerants require special handling
+            and are not collected through bulk trash.
+          </p>
+
+
+          <h4>Yard debris</h4>
+
+          <ul class="resource-list">
+            <li>Tree branches and brush</li>
+            <li>Grass clippings and leaves</li>
+            <li>Palm fronds and other landscape debris</li>
+            <li>
+              Bag loose grass clippings, leaves, and similar debris.
+            </li>
+            <li>
+              Cut tree limbs and branches to
+              <strong>4 feet or less</strong> in length and
+              <strong>6 inches or less</strong> in diameter.
+            </li>
+            <li>Stack branches and palm fronds neatly.</li>
+          </ul>
+        </section>
+
+
+        <section>
+          <p class="resource-card__type">Not Accepted</p>
+          <h3>Keep these items out</h3>
+
+          <ul class="resource-list">
+            <li>Household hazardous waste</li>
+            <li>Tires</li>
+            <li>Batteries, including lithium-ion batteries</li>
+            <li>Liquid paint</li>
+            <li>Construction and demolition debris</li>
+            <li>
+              Refrigerators, air conditioners, and other appliances
+              containing refrigerants
+            </li>
+            <li>Recyclable materials</li>
+            <li>Animal, livestock, or agricultural waste</li>
+          </ul>
+
+          <p class="resource-note">
+            Large cardboard boxes are not bulk trash. Break them down
+            and place them in the blue recycling container.
+          </p>
+
+          <a
+            class="inline-official-link"
+            href="/resources/avondale/household-hazardous-waste/"
+            data-link-note="View Our West Valley AZ's Avondale household hazardous waste guide.">
+            View Avondale household hazardous waste information →
+          </a>
+        </section>
+
+      </div>
+
+
+      <section class="bulk-faqs">
+
+        <p class="resource-card__type">Bulk Trash Reference</p>
+        <h2 class="bulk-faqs__title">Common bulk trash questions</h2>
+
+        <div class="visible-faq-list">
+
+          <section class="visible-faq">
+            <h4>How often is bulk trash collected?</h4>
+            <p>
+              Bulk trash is collected once per month based on your zone.
+            </p>
+          </section>
+
+
+          <section class="visible-faq">
+            <h4>Can I schedule a bulk pickup?</h4>
+            <p>
+              No. Bulk trash is collected on a set monthly schedule.
+            </p>
+          </section>
+
+
+          <section class="visible-faq">
+            <h4>What time should I set out bulk items?</h4>
+            <p>
+              Set out bulk trash by 5:00 a.m. Monday of your scheduled
+              service week.
+            </p>
+          </section>
+
+
+          <section class="visible-faq">
+            <h4>Why wasn't my bulk trash collected?</h4>
+
+            <p>
+              Avondale says bulk trash may not be collected if items were:
+            </p>
+
+            <ul class="resource-list">
+              <li>Set out too early or too late</li>
+              <li>Contained prohibited items</li>
+              <li>Set out during the wrong service week</li>
+              <li>Exceeded the 3-cubic-yard limit</li>
+            </ul>
+
+            <p>
+              Once corrected, collection occurs during the next scheduled
+              service month.
+            </p>
+          </section>
+
+
+          <section class="visible-faq">
+            <h4>Do holidays affect bulk trash pickup?</h4>
+
+            <p>
+              Bulk trash follows Avondale's regular trash holiday schedule.
+              The City identifies three citywide collection holidays:
+            </p>
+
+            <ul class="resource-list">
+              <li>Thanksgiving</li>
+              <li>Christmas Day</li>
+              <li>New Year's Day</li>
+            </ul>
+
+            <p>
+              If collection falls on one of these holidays, service may
+              be delayed by one day that week.
+            </p>
+          </section>
+
+        </div>
+
+      </section>
+
+
+      <div class="official-links">
+
+        <a
+          href="https://avondaleaz.gov/government/departments/public-works/trash-recycling-services/bulk-trash-pickup/"
+          data-link-note="Opens the City of Avondale's official bulk trash information page in a new tab."
+          target="_blank"
+          rel="noopener noreferrer">
+          View official Avondale bulk trash page →
+        </a>
+
+        <a
+          href="https://avondaleaz.gov/app/uploads/2026/05/Solid-Waste-Zone-Schedule.pdf"
+          data-link-note="Opens the official City of Avondale solid waste zone schedule PDF in a new tab."
+          target="_blank"
+          rel="noopener noreferrer">
+          Open official zone schedule PDF →
+        </a>
+
+      </div>
+
+
+      <div class="verification">
+        <strong>Last verified:</strong> August 25, 2026<br>
+        Source: City of Avondale
+      </div>
+
+    </section>
+
+    <aside class="source-notice">
+      <strong>Information can change.</strong>
+      Our West Valley AZ summarizes official information to make it easier
+      to find. Verify schedules, requirements, fees, and collection rules
+      with the City of Avondale before making plans.
+    </aside>
+
+  </div>
+</section>
+
+
+<script>
+(() => {
+  const links = [...document.querySelectorAll('main a[data-link-note]')];
+  if (!links.length) return;
+
+  const tooltip = document.createElement('div');
+  tooltip.className = 'link-note-tooltip';
+  tooltip.setAttribute('role', 'tooltip');
+  document.body.appendChild(tooltip);
+
+  const OFFSET = 12;
+
+  function show(text) {
+    tooltip.textContent = text;
+    tooltip.classList.add('is-visible');
+  }
+
+  function hide() {
+    tooltip.classList.remove('is-visible');
+  }
+
+  function positionAtPointer(event) {
+    const pad = 8;
+
+    let x = event.clientX + OFFSET;
+    let y = event.clientY + OFFSET;
+
+    tooltip.style.left = x + 'px';
+    tooltip.style.top = y + 'px';
+
+    const rect = tooltip.getBoundingClientRect();
+
+    if (rect.right > window.innerWidth - pad) {
+      x = event.clientX - rect.width - OFFSET;
+    }
+
+    if (rect.bottom > window.innerHeight - pad) {
+      y = event.clientY - rect.height - OFFSET;
+    }
+
+    tooltip.style.left = Math.max(pad, x) + 'px';
+    tooltip.style.top = Math.max(pad, y) + 'px';
+  }
+
+  links.forEach((link) => {
+    link.addEventListener('mouseenter', (event) => {
+      if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+      show(link.dataset.linkNote);
+      positionAtPointer(event);
+    });
+
+    link.addEventListener('mousemove', positionAtPointer);
+
+    link.addEventListener('mouseleave', hide);
+
+    link.addEventListener('focus', () => {
+      show(link.dataset.linkNote);
+
+      const rect = link.getBoundingClientRect();
+      tooltip.style.left = Math.max(8, rect.left) + 'px';
+      tooltip.style.top = (rect.bottom + 8) + 'px';
+    });
+
+    link.addEventListener('blur', hide);
+  });
+})();
+</script>
+
+
+<script>
+(() => {
+  const schedule = document.querySelector('[data-zone-schedule]');
+  if (!schedule) return;
+
+  const tabs = [...schedule.querySelectorAll('[data-zone]')];
+  const panels = [...schedule.querySelectorAll('[data-zone-panel]')];
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const selected = tab.dataset.zone;
+
+      tabs.forEach((item) => {
+        const active = item.dataset.zone === selected;
+        item.classList.toggle('is-active', active);
+        item.setAttribute('aria-selected', String(active));
+      });
+
+      panels.forEach((panel) => {
+        const active = panel.dataset.zonePanel === selected;
+        panel.classList.toggle('is-active', active);
+        panel.hidden = !active;
+      });
+    });
+  });
+})();
+</script>
+
+
+<script>
+(() => {
+  const hotspots = [...document.querySelectorAll('[data-zone-target]')];
+  const cards = [...document.querySelectorAll('.resident-zone-card')];
+
+  if (!hotspots.length || !cards.length) return;
+
+  const mobileQuery = window.matchMedia('(max-width: 650px)');
+
+  function resetMobileCards() {
+    if (!mobileQuery.matches) {
+      cards.forEach((card) => {
+        card.hidden = false;
+        card.classList.remove('is-mobile-selected-zone');
+      });
+      return;
+    }
+
+    cards.forEach((card) => {
+      card.hidden = true;
+      card.classList.remove('is-mobile-selected-zone');
+    });
+  }
+
+  function showSelectedMobileCard(target) {
+    if (!mobileQuery.matches) return;
+
+    cards.forEach((card) => {
+      const selected = card === target;
+      card.hidden = !selected;
+      card.classList.toggle('is-mobile-selected-zone', selected);
+    });
+  }
+
+  function activateZone(event) {
+    event.preventDefault();
+
+    const target = document.getElementById(this.dataset.zoneTarget);
+    if (!target) return;
+
+    if (mobileQuery.matches) {
+      showSelectedMobileCard(target);
+    }
+
+    history.replaceState(null, '', '#' + target.id);
+
+    requestAnimationFrame(() => {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+
+      document
+        .querySelectorAll('.resident-zone-card.is-zone-target')
+        .forEach((card) => card.classList.remove('is-zone-target'));
+
+      target.classList.add('is-zone-target');
+
+      setTimeout(() => {
+        target.focus({ preventScroll: true });
+      }, 350);
+
+      setTimeout(() => {
+        target.classList.remove('is-zone-target');
+      }, 1800);
+    });
+  }
+
+  hotspots.forEach((hotspot) => {
+    hotspot.addEventListener('click', activateZone);
+  });
+
+  resetMobileCards();
+
+  if (typeof mobileQuery.addEventListener === 'function') {
+    mobileQuery.addEventListener('change', resetMobileCards);
+  } else if (typeof mobileQuery.addListener === 'function') {
+    mobileQuery.addListener(resetMobileCards);
+  }
+})();
+</script>
+
+{{ end }}

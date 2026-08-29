@@ -1,0 +1,58 @@
+<header class="site-header">
+  <div class="site-header__inner">
+
+    <a class="site-brand" href="{{ site.Home.RelPermalink }}">
+      <span class="site-brand__name">Our West Valley AZ</span>
+      <span class="site-brand__tagline">Neighbors. Information. Community.</span>
+    </a>
+
+    <nav class="site-nav site-nav--desktop" aria-label="Main navigation">
+      {{ range site.Menus.main }}
+        {{ if .HasChildren }}
+          <div class="site-nav__dropdown">
+            <button class="site-nav__dropdown-toggle" type="button">
+              {{ .Name }}
+              <span aria-hidden="true">▾</span>
+            </button>
+
+            <div class="site-nav__dropdown-menu">
+              {{ range .Children }}
+                <a href="{{ .URL }}">{{ .Name }}</a>
+              {{ end }}
+            </div>
+          </div>
+        {{ else }}
+          <a href="{{ .URL }}">{{ .Name }}</a>
+        {{ end }}
+      {{ end }}
+    </nav>
+
+    <details class="mobile-nav">
+      <summary aria-label="Open navigation menu">
+        <span class="hamburger" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </summary>
+
+      <nav class="mobile-nav__menu" aria-label="Mobile navigation">
+        {{ range site.Menus.main }}
+          {{ if .HasChildren }}
+            <details class="mobile-nav__communities">
+              <summary>{{ .Name }}</summary>
+              <div class="mobile-nav__submenu">
+                {{ range .Children }}
+                  <a href="{{ .URL }}">{{ .Name }}</a>
+                {{ end }}
+              </div>
+            </details>
+          {{ else }}
+            <a href="{{ .URL }}">{{ .Name }}</a>
+          {{ end }}
+        {{ end }}
+      </nav>
+    </details>
+
+  </div>
+</header>

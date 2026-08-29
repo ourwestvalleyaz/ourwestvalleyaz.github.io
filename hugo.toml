@@ -1,0 +1,34 @@
+baseURL = 'https://ourwestvalleyaz.org/'
+locale = 'en-US'
+title = 'Our West Valley AZ'
+enableRobotsTXT = true
+
+[params]
+  description = 'Community information, local resources, public records, and civic participation across Arizona’s West Valley.'
+
+[menus]
+  [[menus.main]]
+    name = 'Home'
+    pageRef = '/'
+    weight = 10
+
+  [[menus.main]]
+    name = 'Communities'
+    identifier = 'communities'
+    weight = 20
+
+  [[menus.main]]
+    name = 'Avondale'
+    pageRef = '/communities/avondale'
+    parent = 'communities'
+    weight = 10
+
+
+  [[menus.main]]
+    name = 'About'
+    pageRef = '/about'
+    weight = 30
+
+[params.community]
+  facebook = 'https://www.facebook.com/groups/2125291671729593/'
+  nextdoor = 'https://nextdoor.com/g/64p97kb8q/'

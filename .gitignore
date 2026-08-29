@@ -1,0 +1,17 @@
+# Hugo generated output
+/public/
+/resources/_gen/
+.hugo_build.lock
+
+# Local backup files
+*.bak
+*.bak.*
+
+# OS/editor files
+.DS_Store
+*~
+
+# Local backup directory
+/backups/
+*.backup-*
+*.bak-*
