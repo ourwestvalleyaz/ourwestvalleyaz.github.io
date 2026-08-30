@@ -702,7 +702,7 @@ a.community-connect__link:hover {
     position: relative;
   }
 
-  .mobile-nav summary {
+  .mobile-nav > summary {
     list-style: none;
     width: 44px;
     height: 44px;
@@ -714,7 +714,7 @@ a.community-connect__link:hover {
     cursor: pointer;
   }
 
-  .mobile-nav summary::-webkit-details-marker {
+  .mobile-nav > summary::-webkit-details-marker {
     display: none;
   }
 
@@ -733,7 +733,7 @@ a.community-connect__link:hover {
     border-radius: 2px;
   }
 
-  .mobile-nav[open] summary {
+  .mobile-nav[open] > summary {
     background: #3a3733;
   }
 
@@ -780,17 +780,17 @@ a.community-connect__link:hover {
 /* Hamburger cleanup */
 
 @media (max-width: 700px) {
-  .mobile-nav summary {
+  .mobile-nav > summary {
     appearance: none;
     -webkit-appearance: none;
     font-size: 0;
   }
 
-  .mobile-nav summary::marker {
+  .mobile-nav > summary::marker {
     content: "";
   }
 
-  .mobile-nav summary::-webkit-details-marker {
+  .mobile-nav > summary::-webkit-details-marker {
     display: none;
   }
 
@@ -5188,7 +5188,6 @@ a.community-connect__link:hover {
     z-index: -1;
   }
 
-}
 
 
 /* ==========================================================
@@ -6672,4 +6671,1686 @@ a.community-connect__link:hover {
   .surveillance-unknowns .resource-list {
     columns: 1;
   }
+}
+
+
+/* ==========================================================
+   BEGIN OWVAZ MOBILE COHESION PASS
+
+   Purpose:
+   - normalize mobile gutters across page families
+   - establish consistent section rhythm
+   - prevent cramped mobile navigation
+   - improve Avondale quick-reference readability
+   - preserve existing desktop layouts and design language
+   ========================================================== */
+
+
+/* ----------------------------------------------------------
+   Shared mobile page gutters
+
+   Home and the canonical Avondale page already use 1.25rem.
+   Extend that same mobile gutter to resource pages, default
+   pages and legacy city containers.
+   ---------------------------------------------------------- */
+
+@media (max-width: 760px) {
+
+  .page-shell,
+  .resource-page__inner,
+  .resource-page-hero__inner,
+  .community-hub__inner,
+  .city-hero .container,
+  .city-section .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+}
+
+
+/* ----------------------------------------------------------
+   Default / About / list pages
+
+   Bring generic Hugo pages into the same mobile rhythm used
+   by Home, Avondale and resource pages.
+   ---------------------------------------------------------- */
+
+@media (max-width: 760px) {
+
+  .page-shell {
+    padding-top: 1.75rem;
+    padding-bottom: 3rem;
+  }
+
+  .page-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .page-header .eyebrow {
+    margin-bottom: .45rem;
+  }
+
+  .page-header h1 {
+    font-size: var(--resource-type-page-title);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+  }
+
+  .page-description {
+    margin-top: .65rem;
+    font-size: var(--resource-type-body);
+    line-height: 1.5;
+  }
+
+  .prose {
+    width: 100%;
+    max-width: none;
+  }
+
+  .prose h2 {
+    margin-top: 1.75rem;
+    margin-bottom: .65rem;
+  }
+
+  .prose h3 {
+    margin-top: 1.5rem;
+    margin-bottom: .55rem;
+  }
+
+}
+
+
+/* ----------------------------------------------------------
+   Shared resource-page hero
+
+   Match the compact hierarchy already established by the
+   canonical Home and Avondale pages.
+   ---------------------------------------------------------- */
+
+@media (max-width: 760px) {
+
+  .resource-page-hero {
+    padding-top: 1.6rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .resource-page-hero__inner > .resource-page__back {
+    margin-bottom: .7rem;
+  }
+
+  .resource-page-hero .eyebrow {
+    margin-top: .35rem;
+    margin-bottom: .45rem;
+  }
+
+  .resource-page-hero h1 {
+    margin-top: 0;
+    margin-bottom: .6rem;
+  }
+
+  .resource-page-hero p:last-child {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+
+  .resource-page {
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
+  }
+
+}
+
+
+/* ----------------------------------------------------------
+   Resource jump navigation
+
+   Earlier CSS turns this into a nowrap flex row. That makes
+   longer resource pages extremely cramped on phones.
+
+   Use a two-column touch-friendly grid instead.
+   ---------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+  .resource-subnav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .5rem;
+    width: 100%;
+    margin: 0 0 1.5rem;
+    overflow: visible;
+  }
+
+  .resource-subnav a {
+    display: flex;
+    min-width: 0;
+    min-height: 42px;
+    padding: .55rem .65rem;
+    align-items: center;
+    justify-content: center;
+
+    white-space: normal;
+    text-align: center;
+    text-wrap: balance;
+
+    font-size: .82rem;
+    line-height: 1.2;
+  }
+
+}
+
+@media (max-width: 390px) {
+
+  .resource-subnav {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* ----------------------------------------------------------
+   Avondale page jump navigation
+
+   Replace the horizontally scrolling chip strip with a stable
+   two-column layout so labels remain readable and cohesive.
+   ---------------------------------------------------------- */
+
+@media (max-width: 760px) {
+
+  .community-jump-nav__links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .45rem;
+
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+
+    overflow: visible;
+  }
+
+  .community-jump-nav__links a {
+    display: flex;
+    min-width: 0;
+    min-height: 40px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: .48rem .6rem;
+
+    white-space: normal;
+    text-align: center;
+    text-wrap: balance;
+    line-height: 1.2;
+  }
+
+}
+
+@media (max-width: 390px) {
+
+  .community-jump-nav__links {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* ----------------------------------------------------------
+   Avondale Resident Quick Reference
+
+   Keep the information-first list layout. Add enough rhythm
+   that links, descriptions and categories stop running
+   visually into one another.
+   ---------------------------------------------------------- */
+
+@media (max-width: 760px) {
+
+  .community-reference {
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .community-reference-label {
+    padding-bottom: .75rem;
+  }
+
+  .community-reference .reference-section {
+    gap: .85rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .community-reference .reference-section__heading h2 {
+    margin-bottom: .3rem;
+    font-size: 1.05rem;
+    line-height: 1.2;
+  }
+
+  .community-reference .reference-section__heading p {
+    line-height: 1.45;
+  }
+
+  .community-reference .reference-links {
+    row-gap: .8rem;
+  }
+
+  .community-reference .reference-links a {
+    padding: .08rem 0;
+  }
+
+  .community-reference .reference-links a strong {
+    line-height: 1.3;
+  }
+
+  .community-reference .reference-links a span {
+    margin-top: .14rem;
+    line-height: 1.4;
+  }
+
+}
+
+
+/* ----------------------------------------------------------
+   Understand Your City
+
+   Match the same section/card breathing room used elsewhere.
+   ---------------------------------------------------------- */
+
+@media (max-width: 760px) {
+
+  .community-understand {
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .community-understand .section-heading {
+    margin-bottom: 1rem;
+  }
+
+  .community-understand .understand-grid {
+    margin-top: 1rem;
+    gap: .85rem;
+  }
+
+  .community-understand .understand-item {
+    padding: 1rem;
+  }
+
+  .community-understand .understand-item h3 {
+    margin-bottom: .45rem;
+  }
+
+  .community-understand .understand-item p {
+    margin-bottom: .75rem;
+    line-height: 1.5;
+  }
+
+}
+
+
+/* ----------------------------------------------------------
+   Shared budget / surveillance resource rhythm
+
+   These page families already share budget-section and related
+   components. Normalize only mobile spacing, not structure.
+   ---------------------------------------------------------- */
+
+@media (max-width: 560px) {
+
+  .budget-section {
+    padding-top: 1.65rem;
+    padding-bottom: 1.65rem;
+  }
+
+  .budget-section > h2 {
+    margin-top: 0;
+    margin-bottom: .75rem;
+    line-height: 1.15;
+  }
+
+  .budget-stat-grid,
+  .budget-revenue-grid,
+  .capital-project-groups {
+    margin-top: 1rem;
+    margin-bottom: 1.25rem;
+    gap: .75rem;
+  }
+
+  .budget-stat {
+    padding: 1rem;
+  }
+
+  .budget-note {
+    margin-top: 1.15rem;
+    margin-bottom: 1.15rem;
+    padding: 1rem 1.05rem;
+  }
+
+  .budget-detail {
+    margin-top: 1.15rem;
+    margin-bottom: 1.15rem;
+    padding: 1rem;
+  }
+
+  .budget-detail-list {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    gap: .6rem;
+  }
+
+  .budget-source-list {
+    gap: .65rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .budget-source-list a {
+    padding: .9rem;
+  }
+
+}
+
+
+/* ----------------------------------------------------------
+   Surveillance-specific mobile details
+   ---------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+  .surveillance-summary {
+    gap: .7rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .surveillance-section-lead {
+    gap: .8rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: .9rem 1rem;
+  }
+
+  .surveillance-section-lead__number {
+    min-width: 3.5rem;
+  }
+
+  .surveillance-timeline {
+    margin-top: 1rem;
+  }
+
+}
+
+
+/* ----------------------------------------------------------
+   Trash / recycling page
+
+   Preserve the zone-selection behavior and map. Normalize the
+   vertical gaps surrounding the major mobile components.
+   ---------------------------------------------------------- */
+
+@media (max-width: 650px) {
+
+  .resident-collection {
+    margin-bottom: 2rem;
+  }
+
+  .resident-schedule__heading {
+    margin-bottom: 1rem;
+  }
+
+  .resident-schedule-layout {
+    gap: 1.25rem;
+  }
+
+  .resident-zone-grid {
+    margin-top: .75rem;
+  }
+
+  .resident-zone-card {
+    padding: 1rem;
+  }
+
+  .resident-schedule__setout {
+    margin-top: .85rem;
+  }
+
+  .bulk-material-columns,
+  .bulk-guidelines {
+    margin-bottom: 2rem;
+  }
+
+}
+
+
+/* ----------------------------------------------------------
+   Generic cards and touch targets
+
+   Do not make the site card-heavy. Only normalize existing
+   card components on phones.
+   ---------------------------------------------------------- */
+
+@media (max-width: 560px) {
+
+  .feature-card,
+  .card,
+  .resource-card {
+    padding: 1.1rem;
+  }
+
+  .official-links {
+    gap: .55rem;
+  }
+
+  .official-links a,
+  .primary-resource-link {
+    min-height: 42px;
+  }
+
+}
+
+
+/* ----------------------------------------------------------
+   Mobile table affordance
+
+   Tables intentionally remain horizontally scrollable where
+   needed. Give the scroll container consistent edges.
+   ---------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+  .budget-table-wrap,
+  .schedule-table-wrap {
+    max-width: 100%;
+    border-radius: .35rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+}
+
+
+/* ----------------------------------------------------------
+   Footer rhythm
+   ---------------------------------------------------------- */
+
+@media (max-width: 760px) {
+
+  .site-footer__inner {
+    padding: 2rem 1.25rem;
+  }
+
+  .site-footer__inner > *:first-child {
+    margin-top: 0;
+  }
+
+  .site-footer__inner > *:last-child {
+    margin-bottom: 0;
+  }
+
+}
+
+
+/* ==========================================================
+   END OWVAZ MOBILE COHESION PASS
+   ========================================================== */
+
+
+/* ==========================================================
+   BEGIN OWVAZ MOBILE NAV ROW CONSISTENCY
+
+   Home, Communities and About should present as equivalent
+   top-level navigation rows. Communities retains a disclosure
+   indicator because it contains a submenu.
+   ========================================================== */
+
+@media (max-width: 700px) {
+
+  .mobile-nav__communities {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .mobile-nav__communities > summary {
+    appearance: none;
+    -webkit-appearance: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: auto;
+
+    margin: 0;
+    padding: 0.9rem 1rem;
+
+    border: 0;
+    border-bottom: 1px solid #45413c;
+    border-radius: 0;
+
+    background: transparent;
+    color: var(--header-text);
+
+    font: inherit;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: left;
+
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .mobile-nav__communities > summary::marker,
+  .mobile-nav__communities > summary::-webkit-details-marker {
+    display: none;
+    content: "";
+  }
+
+  .mobile-nav__communities > summary::after {
+    content: "▾";
+    flex: 0 0 auto;
+    margin-left: 1rem;
+
+    color: #d1c8bc;
+    font-size: 0.78rem;
+    line-height: 1;
+  }
+
+  .mobile-nav__communities[open] > summary::after {
+    transform: rotate(180deg);
+  }
+
+  .mobile-nav__communities > summary:hover,
+  .mobile-nav__communities > summary:focus-visible {
+    background: #373430;
+    color: #ffffff;
+  }
+
+  .mobile-nav__submenu {
+    display: grid;
+    padding-left: 0;
+    background: #242220;
+  }
+
+  .mobile-nav__submenu a {
+    padding-left: 1.65rem;
+  }
+
+}
+
+/* ==========================================================
+   END OWVAZ MOBILE NAV ROW CONSISTENCY
+   ========================================================== */
+
+
+/* ==========================================================
+   BEGIN AVONDALE SECTION NAVIGATION
+   ========================================================== */
+
+.community-jump-nav__label {
+  margin: 0;
+  padding: .8rem 0 .2rem;
+
+  color: var(--text-muted);
+  font-size: var(--resource-type-label);
+  font-weight: 800;
+  letter-spacing: .08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.section-return {
+  display: flex;
+  justify-content: flex-end;
+
+  width: 100%;
+  margin-top: 1.15rem;
+}
+
+.section-return a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 38px;
+  padding: .4rem .7rem;
+
+  border: 1px solid var(--border);
+  border-radius: .45rem;
+
+  background: transparent;
+  color: var(--accent-dark);
+
+  font-size: .82rem;
+  font-weight: 750;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.section-return a:hover,
+.section-return a:focus-visible {
+  border-color: var(--accent);
+  background: var(--surface-muted);
+  color: var(--accent-dark);
+}
+
+#history,
+#quick-actions,
+#trash-recycling,
+#water,
+#getting-around,
+#parks-community,
+#local-government,
+#budget-spending,
+#mass-surveillance {
+  scroll-margin-top: 1rem;
+}
+
+@media (max-width: 760px) {
+
+  .community-jump-nav__label {
+    padding-top: .75rem;
+    padding-bottom: .35rem;
+  }
+
+  .section-return {
+    margin-top: 1rem;
+  }
+
+  .section-return a {
+    min-height: 40px;
+    padding: .45rem .75rem;
+  }
+
+}
+
+/* ==========================================================
+   END AVONDALE SECTION NAVIGATION
+   ========================================================== */
+
+
+/* ==========================================================
+   BEGIN AVONDALE MOBILE-ONLY NAVIGATION CORRECTION
+   ========================================================== */
+
+/*
+ * Avondale enhancements added during the mobile cohesion pass
+ * must not alter the normal desktop presentation.
+ */
+
+.mobile-only {
+  display: none !important;
+}
+
+.desktop-only {
+  display: initial;
+}
+
+/* Back-to-top controls are mobile-only. */
+.section-return {
+  display: none;
+}
+
+/* "On this page" is mobile-only. */
+.community-jump-nav__label {
+  display: none;
+}
+
+@media (max-width: 760px) {
+
+  .mobile-only {
+    display: flex !important;
+  }
+
+  .community-jump-nav__label.mobile-only {
+    display: block !important;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .section-return {
+    display: flex;
+  }
+
+}
+
+/* ==========================================================
+   END AVONDALE MOBILE-ONLY NAVIGATION CORRECTION
+   ========================================================== */
+
+
+/* ==========================================================
+   BEGIN AVONDALE MOBILE SECTION LINKS MATCH FY2027
+
+   Mobile only. Match Avondale's page-section navigation to
+   the final mobile resource-subnav treatment used by FY2027.
+   Desktop remains unchanged.
+   ========================================================== */
+
+@media (max-width: 760px) {
+
+  .community-jump-nav__links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: .5rem;
+    width: 100%;
+
+    margin: 0 0 1.5rem;
+    padding: 0;
+
+    overflow: visible;
+  }
+
+  .community-jump-nav__links a {
+    display: flex;
+
+    min-width: 0;
+    min-height: 42px;
+
+    padding: .55rem .65rem;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    background: var(--surface);
+    color: var(--text);
+
+    white-space: normal;
+    text-align: center;
+    text-wrap: balance;
+
+    font-size: .82rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-decoration: none;
+  }
+
+  .community-jump-nav__links a:hover,
+  .community-jump-nav__links a:focus-visible {
+    border-color: #b89b82;
+    color: var(--accent-dark);
+  }
+
+  .community-jump-nav__label.mobile-only {
+    margin: 0;
+    padding: .75rem 0 .5rem;
+  }
+
+}
+
+@media (max-width: 390px) {
+
+  .community-jump-nav__links {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* ==========================================================
+   END AVONDALE MOBILE SECTION LINKS MATCH FY2027
+   ========================================================== */
+
+/* BEGIN AVONDALE BUDGET MOBILE TABLE FIT */
+/* Mobile only. Desktop remains unchanged. */
+
+@media (max-width: 560px) {
+
+  .budget-page .budget-table-wrap {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: visible;
+  }
+
+  .budget-page .budget-table {
+    width: 100%;
+    min-width: 0;
+    table-layout: auto;
+    font-size: .82rem;
+  }
+
+  .budget-page .budget-table th,
+  .budget-page .budget-table td {
+    min-width: 0;
+    padding: .65rem .4rem;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+
+  .budget-page .budget-table th:first-child,
+  .budget-page .budget-table td:first-child {
+    padding-left: .2rem;
+  }
+
+  .budget-page .budget-table th:last-child,
+  .budget-page .budget-table td:last-child {
+    padding-right: .2rem;
+  }
+
+}
+
+/* END AVONDALE BUDGET MOBILE TABLE FIT */
+
+/* BEGIN AVONDALE BUDGET MOBILE CARD COMPACT */
+/* Mobile only. Desktop remains unchanged. */
+
+@media (max-width: 560px) {
+
+  .budget-page .budget-stat-grid,
+  .budget-page .budget-stat-grid--compact,
+  .budget-page .budget-revenue-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .65rem;
+  }
+
+  .budget-page .budget-stat,
+  .budget-page .budget-revenue-card {
+    min-width: 0;
+    padding: .8rem;
+  }
+
+  .budget-page .budget-stat strong {
+    font-size: 1.35rem;
+  }
+
+  .budget-page .budget-revenue-card strong {
+    font-size: 1.3rem;
+  }
+
+  .budget-page .budget-stat__label,
+  .budget-page .budget-revenue-card > span {
+    line-height: 1.2;
+  }
+
+  .budget-page .budget-stat > span:last-child,
+  .budget-page .budget-revenue-card p {
+    font-size: .82rem;
+    line-height: 1.35;
+  }
+
+}
+
+@media (max-width: 390px) {
+
+  .budget-page .budget-stat-grid,
+  .budget-page .budget-stat-grid--compact,
+  .budget-page .budget-revenue-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* END AVONDALE BUDGET MOBILE CARD COMPACT */
+
+/* BEGIN AVONDALE BUDGET MOBILE CAPITAL PROJECTS COMPACT */
+/* Mobile only. Desktop remains unchanged. */
+
+@media (max-width: 560px) {
+
+  .budget-page .capital-project-groups {
+    gap: .75rem;
+    margin-top: 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .budget-page .capital-project-group {
+    border-radius: .65rem;
+  }
+
+  .budget-page .capital-project-group__heading {
+    gap: .65rem;
+    padding: .75rem .8rem;
+  }
+
+  .budget-page .capital-project-group__icon {
+    width: 1.9rem;
+    height: 1.9rem;
+    flex-basis: 1.9rem;
+    font-size: .82rem;
+  }
+
+  .budget-page .capital-project-group__heading h4 {
+    margin-top: .05rem;
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+  .budget-page .capital-project-group__heading .resource-card__type {
+    font-size: .7rem;
+    line-height: 1.15;
+  }
+
+  /*
+   * Keep the dollar amount beside the project name on normal
+   * phones. This substantially reduces vertical page length.
+   */
+  .budget-page .capital-project {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: .3rem .65rem;
+    padding: .68rem .8rem;
+    align-items: start;
+  }
+
+  .budget-page .capital-project > div {
+    min-width: 0;
+  }
+
+  .budget-page .capital-project strong {
+    line-height: 1.3;
+  }
+
+  .budget-page .capital-project span {
+    margin-top: .12rem;
+    font-size: .8rem;
+    line-height: 1.3;
+  }
+
+  .budget-page .capital-project b {
+    margin-top: .05rem;
+    font-size: .9rem;
+    line-height: 1.3;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+}
+
+/*
+ * Very narrow phones retain the safer stacked layout.
+ */
+@media (max-width: 390px) {
+
+  .budget-page .capital-project {
+    grid-template-columns: 1fr;
+    gap: .2rem;
+  }
+
+  .budget-page .capital-project b {
+    text-align: left;
+    white-space: normal;
+  }
+
+}
+
+/* END AVONDALE BUDGET MOBILE CAPITAL PROJECTS COMPACT */
+
+/* BEGIN AVONDALE BUDGET MOBILE POLICE TECH COMPACT */
+/* Mobile only. Desktop remains unchanged. */
+
+@media (max-width: 560px) {
+
+  /*
+   * Police technology detail cards
+   */
+  .budget-page #notable-spending .budget-detail {
+    margin-top: .9rem;
+    margin-bottom: .9rem;
+    padding: .9rem;
+    border-radius: .65rem;
+  }
+
+  .budget-page #notable-spending .budget-detail .resource-card__type {
+    margin-bottom: .25rem;
+    font-size: .7rem;
+    line-height: 1.2;
+  }
+
+  .budget-page #notable-spending .budget-detail h3 {
+    margin-top: 0;
+    margin-bottom: .65rem;
+    font-size: 1.12rem;
+    line-height: 1.2;
+    text-wrap: balance;
+  }
+
+  .budget-page #notable-spending .budget-detail p {
+    margin-top: .55rem;
+    margin-bottom: .55rem;
+  }
+
+
+  /*
+   * Funding / detail grids
+   */
+  .budget-page #notable-spending .budget-detail-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .45rem;
+    margin-top: .75rem;
+    margin-bottom: .75rem;
+  }
+
+  .budget-page #notable-spending .budget-detail-list div {
+    min-width: 0;
+    padding: .6rem;
+  }
+
+  .budget-page #notable-spending .budget-detail-list dt {
+    margin-bottom: .1rem;
+    font-size: .68rem;
+    line-height: 1.15;
+  }
+
+  .budget-page #notable-spending .budget-detail-list dd {
+    overflow-wrap: anywhere;
+    font-size: .88rem;
+    line-height: 1.25;
+  }
+
+
+  /*
+   * Supporting notes and research link
+   */
+  .budget-page #notable-spending .resource-note {
+    margin-top: .65rem;
+    margin-bottom: .65rem;
+    font-size: .8rem;
+    line-height: 1.4;
+  }
+
+  .budget-page #notable-spending .budget-text-link {
+    display: inline-block;
+    margin-top: .3rem;
+    line-height: 1.35;
+  }
+
+}
+
+
+/*
+ * Very narrow phones
+ */
+@media (max-width: 390px) {
+
+  .budget-page #notable-spending .budget-detail-list {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* END AVONDALE BUDGET MOBILE POLICE TECH COMPACT */
+
+
+/* ==========================================================
+   AVONDALE FY2027 HERO SPACING MATCH
+
+   Match the main Avondale hero's eyebrow -> back link -> H1
+   rhythm to the finished FY2027 resource-page hero.
+   Applies to desktop and mobile.
+   ========================================================== */
+
+.community-hero {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+.community-hero .eyebrow {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.community-hero__inner > .resource-page__back {
+  margin-top: .4rem;
+  margin-bottom: 0;
+}
+
+.community-hero h1 {
+  margin-top: .75rem;
+  margin-bottom: .8rem;
+}
+
+
+@media (max-width: 760px) {
+
+  .community-hero {
+    padding-top: 1.6rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .community-hero .eyebrow {
+    margin-top: .35rem;
+    margin-bottom: .45rem;
+  }
+
+  .community-hero__inner > .resource-page__back {
+    margin-top: .4rem;
+    margin-bottom: .7rem;
+  }
+
+  .community-hero h1 {
+    margin-top: 0;
+    margin-bottom: .6rem;
+  }
+
+}
+
+
+/* ==========================================================
+   OWVAZ CANONICAL PAGE TITLE SYSTEM
+
+   One page-level H1 scale across Home, community pages,
+   resource pages and generic/default pages.
+   ========================================================== */
+
+.hero.hero--compact h1,
+.community-hero h1,
+.resource-page-hero h1,
+.page-header h1 {
+  font-size: var(--resource-type-page-title);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+
+
+
+/* ==========================================================
+   OWVAZ CANONICAL PAGE HEADER GEOMETRY
+
+   Keep page-level titles and the horizontal divider on one
+   shared vertical rhythm across Home, community pages,
+   resource pages and generic/default pages.
+
+   Desktop reference height: 12rem
+   Mobile reference height: 9rem
+   ========================================================== */
+
+/*
+ * Hero-style page headers.
+ *
+ * The minimum height gives pages with different supporting
+ * content a common divider position while allowing longer
+ * titles/content to grow naturally when necessary.
+ */
+
+.hero.hero--compact,
+.community-hero,
+.resource-page-hero {
+  box-sizing: border-box;
+  min-height: 12rem;
+
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  display: flex;
+  align-items: center;
+
+  border-bottom: 1px solid var(--border);
+}
+
+
+/*
+ * Generic/default pages do not use a separate hero element.
+ * Give the page header the same visual header zone and divider.
+ */
+
+.page-shell {
+  padding-top: 0;
+}
+
+.page-header {
+  box-sizing: border-box;
+  min-height: 12rem;
+
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-bottom: 1px solid var(--border);
+}
+
+
+/*
+ * Keep the shared page-title scale intact.
+ */
+
+.hero.hero--compact h1,
+.community-hero h1,
+.resource-page-hero h1,
+.page-header h1 {
+  font-size: var(--resource-type-page-title);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+
+
+/* ----------------------------------------------------------
+   Mobile
+   ---------------------------------------------------------- */
+
+@media (max-width: 760px) {
+
+  .hero.hero--compact,
+  .community-hero,
+  .resource-page-hero {
+    min-height: 9rem;
+
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .page-header {
+    min-height: 9rem;
+
+    margin-bottom: 1.5rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+}
+
+
+/* ==========================================================
+   OWVAZ DESKTOP PAGE TITLE ALIGNMENT
+
+   Align the H1 itself rather than vertically centering each
+   header's entire content stack.
+
+   Desktop only. Mobile keeps its existing layout.
+   ========================================================== */
+
+@media (min-width: 761px) {
+
+  /*
+   * All major page-header regions share the same overall
+   * desktop height and use normal top-down flow.
+   */
+
+  .hero.hero--compact,
+  .community-hero,
+  .resource-page-hero {
+    box-sizing: border-box;
+    min-height: 15.25rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+    display: block;
+  }
+
+
+  /*
+   * Normalize the material that appears above the title.
+   *
+   * Home has only an eyebrow.
+   * Avondale/resource pages have eyebrow + back link.
+   * Give both structures a fixed pre-title zone so every
+   * page-level H1 begins at the same vertical position.
+   */
+
+  .hero.hero--compact .hero__inner,
+  .community-hero__inner,
+  .resource-page-hero__inner {
+    position: relative;
+  }
+
+
+  /* Home */
+
+  .hero.hero--compact .eyebrow {
+    margin: 0 0 .45rem;
+  }
+
+  .hero.hero--compact h1 {
+    margin-top: 2.45rem;
+    margin-bottom: .65rem;
+  }
+
+
+  /* Avondale */
+
+  .community-hero .eyebrow {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .community-hero__inner > .resource-page__back {
+    margin-top: .4rem;
+    margin-bottom: 0;
+  }
+
+  .community-hero h1 {
+    margin-top: .75rem;
+    margin-bottom: .8rem;
+  }
+
+
+  /* Budget/resource pages */
+
+  .resource-page-hero .eyebrow {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .resource-page-hero__inner > .resource-page__back {
+    margin-top: .4rem;
+    margin-bottom: 0;
+  }
+
+  .resource-page-hero h1 {
+    margin-top: .75rem;
+    margin-bottom: .8rem;
+  }
+
+
+  /*
+   * Generic/default pages.
+   *
+   * These do not have a separate hero wrapper, so preserve
+   * their page-shell structure while matching the title's
+   * vertical position.
+   */
+
+  .page-shell {
+    padding-top: 0;
+  }
+
+  .page-header {
+    box-sizing: border-box;
+    min-height: 15.25rem;
+    margin-bottom: 2rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+
+    display: block;
+
+    border-bottom: 1px solid var(--border);
+  }
+
+  .page-header .eyebrow {
+    margin-top: 0;
+    margin-bottom: .45rem;
+  }
+
+  .page-header h1 {
+    margin-top: 2.45rem;
+  }
+
+
+  /*
+   * Preserve the canonical title typography.
+   */
+
+  .hero.hero--compact h1,
+  .community-hero h1,
+  .resource-page-hero h1,
+  .page-header h1 {
+    font-size: var(--resource-type-page-title);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+  }
+
+}
+
+
+/* ==========================================================
+   OWVAZ DESKTOP FY2026 HEADER RHYTHM
+
+   FY2026 is the canonical desktop page-header reference.
+
+   Every page receives the same vertical slots:
+     1. eyebrow
+     2. back-link space
+     3. H1
+     4. description
+
+   Missing elements do not collapse their slot, keeping the
+   H1 and bottom divider at the same vertical position.
+
+   Desktop only.
+   ========================================================== */
+
+@media (min-width: 761px) {
+
+  /*
+   * Canonical FY2026 outer header geometry.
+   */
+
+  .hero.hero--compact,
+  .community-hero,
+  .resource-page-hero {
+    box-sizing: border-box;
+
+    height: 15.25rem;
+    min-height: 15.25rem;
+
+    padding-top: 3.5rem;
+    padding-bottom: 2rem;
+
+    display: block;
+
+    border-bottom: 1px solid var(--border);
+  }
+
+
+  /*
+   * Canonical four-row internal header structure.
+   *
+   * Explicit rows mean Home and Avondale retain the same
+   * title position even when a back link or description
+   * is absent.
+   */
+
+  .hero.hero--compact .hero__inner,
+  .community-hero__inner,
+  .resource-page-hero__inner {
+    height: 100%;
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr);
+
+    grid-template-rows:
+      1.1rem
+      1.3rem
+      auto
+      minmax(0, 1fr);
+
+    row-gap: .65rem;
+
+    align-content: start;
+  }
+
+
+  /*
+   * Row 1: eyebrow.
+   */
+
+  .hero.hero--compact .eyebrow,
+  .community-hero .eyebrow,
+  .resource-page-hero .eyebrow {
+    grid-row: 1;
+
+    align-self: start;
+
+    margin: 0;
+  }
+
+
+  /*
+   * Row 2: back link.
+   *
+   * Home has no back link, but this explicit grid row still
+   * remains and therefore preserves the H1 position.
+   */
+
+  .community-hero__inner > .resource-page__back,
+  .resource-page-hero__inner > .resource-page__back {
+    grid-row: 2;
+
+    align-self: start;
+
+    margin: 0;
+  }
+
+
+  /*
+   * Row 3: canonical page title.
+   */
+
+  .hero.hero--compact h1,
+  .community-hero h1,
+  .resource-page-hero h1 {
+    grid-row: 3;
+
+    align-self: start;
+
+    margin: 0;
+
+    font-size: var(--resource-type-page-title);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+  }
+
+
+  /*
+   * Row 4: supporting description.
+   */
+
+  .hero.hero--compact .hero__lead {
+    grid-row: 4;
+
+    align-self: start;
+
+    margin: 0;
+
+    padding-top: .05rem;
+  }
+
+  .resource-page-hero__inner > p:not(.eyebrow) {
+    grid-row: 4;
+
+    align-self: start;
+
+    margin: 0;
+
+    padding-top: .05rem;
+  }
+
+  .community-hero__lead {
+    grid-row: 4;
+
+    align-self: start;
+
+    margin: 0;
+
+    padding-top: .05rem;
+  }
+
+
+  /*
+   * Generic/default pages use .page-header rather than a
+   * separate hero wrapper. Give them the same FY2026 grid.
+   */
+
+  .page-shell {
+    padding-top: 0;
+  }
+
+  .page-header {
+    box-sizing: border-box;
+
+    height: 15.25rem;
+    min-height: 15.25rem;
+
+    margin-bottom: 2rem;
+
+    padding-top: 3.5rem;
+    padding-bottom: 2rem;
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr);
+
+    grid-template-rows:
+      1.1rem
+      1.3rem
+      auto
+      minmax(0, 1fr);
+
+    row-gap: .65rem;
+
+    align-content: start;
+
+    border-bottom: 1px solid var(--border);
+  }
+
+  .page-header .eyebrow {
+    grid-row: 1;
+
+    margin: 0;
+  }
+
+  .page-header h1 {
+    grid-row: 3;
+
+    margin: 0;
+
+    font-size: var(--resource-type-page-title);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+  }
+
+  .page-header .page-description {
+    grid-row: 4;
+
+    margin: 0;
+
+    padding-top: .05rem;
+  }
+
+}
+
+
+/* ==========================================================
+   OWVAZ HOME FIRST SECTION MATCH COMMUNITY SPACING
+
+   Home desktop only.
+
+   The opening Home section should use the same compact
+   vertical rhythm as the Find Your Community section below
+   it, without changing the canonical header system used by
+   Avondale, budget/resource, or other pages.
+   ========================================================== */
+
+@media (min-width: 761px) {
+
+  .hero.hero--compact {
+    height: auto;
+    min-height: 0;
+
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .hero.hero--compact .hero__inner {
+    height: auto;
+
+    display: block;
+  }
+
+  .hero.hero--compact .eyebrow {
+    margin: 0 0 .65rem;
+  }
+
+  .hero.hero--compact h1 {
+    margin: 0 0 .55rem;
+
+    font-size: var(--resource-type-page-title);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+  }
+
+  .hero.hero--compact .hero__lead {
+    margin: 0;
+    padding: 0;
+  }
+
 }
