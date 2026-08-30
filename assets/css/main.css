@@ -8354,3 +8354,19 @@ a.community-connect__link:hover {
   }
 
 }
+
+
+/* ==========================================================
+   OWVAZ PAGE-LEVEL EYEBROW CONSISTENCY
+
+   Keep the top eyebrow label the same size across all major
+   page hero/header variants. Section-level eyebrows remain
+   unchanged.
+   ========================================================== */
+
+.hero.hero--compact > .hero__inner > .eyebrow,
+.community-hero > .community-hero__inner > .eyebrow,
+.resource-page-hero > .resource-page-hero__inner > .eyebrow,
+.page-header > .eyebrow {
+  font-size: 0.78rem;
+}
