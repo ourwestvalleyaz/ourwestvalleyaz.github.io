@@ -15,3 +15,20 @@
 /backups/
 *.backup-*
 *.bak-*
+
+# OWVAZ local-only / sensitive files
+/scripts/
+/templates/
+
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+*.csr
+
+*secret*
+*credential*
+*credentials*
+*token*
